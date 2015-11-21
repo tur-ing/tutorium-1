@@ -9,9 +9,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-@ManagedBean(name="inventoryViewController")
+@ManagedBean(name="inventoryView")
 @ViewScoped
-public class InventoryViewController implements Serializable {
+public class InventoryView implements Serializable {
 
 	private static final long serialVersionUID = -6583410885242844807L;
 	private List<Food> foods;

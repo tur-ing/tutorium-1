@@ -10,7 +10,7 @@
 	<h:body>
 		<h:outputText value="Hello World"></h:outputText>
 		<p:commandButton value="Neues Lebensmittel" type="button" onclick="PF('addFood').show();"></p:commandButton>
-		<p:dataTable var="food" value="#{inventoryViewController.foods}">
+		<p:dataTable var="food" value="#{inventoryView.foods}">
 			<p:column headerText="Hersteller">
 				<h:outputText value="#{food.maker}"></h:outputText>
 			</p:column>
