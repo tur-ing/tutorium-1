@@ -1,9 +1,16 @@
 package model;
 
-public class Food {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-	private String maker;
+@Entity
+public class Food {
+	
+	@Id
+	@GeneratedValue
 	private Long id;
+	private String maker;
 	private String name;
 	private int expiryDate;
 

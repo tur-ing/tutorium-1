@@ -10,17 +10,18 @@
 	<h:body>
 		<h:outputText value="Hello World"></h:outputText>
 		<p:commandButton value="Neues Lebensmittel" type="button" onclick="PF('addFood').show();"></p:commandButton>
+			<h:form id="addForm">
+				<h:outputText value="Hersteller eingeben:"></h:outputText>
+				<p:inputText value="#{addFoodView.maker}"></p:inputText>
+				<p:commandButton value="Hinzufügen" actionListener="#{addFoodView.addFood}"></p:commandButton>
+			</h:form>
 		<p:dataTable var="food" value="#{inventoryView.foods}">
 			<p:column headerText="Hersteller">
 				<h:outputText value="#{food.maker}"></h:outputText>
 			</p:column>
 		</p:dataTable>
 		<p:dialog header="Eigenschaften Lebensmittel" widgetVar="addFood" modal="true" height="80">
-			<h:form id="addForm">
-				<h:outputText value="Hersteller eingeben:"></h:outputText>
-				<p:inputText value="#{addFoodView.maker}"></p:inputText>
-				<p:commandButton value="Hinzufügen" actionListener="#{addFoodView.addFood}"></p:commandButton>
-			</h:form>
+			
 		</p:dialog>
 	</h:body>
 </html>
