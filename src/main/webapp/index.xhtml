@@ -10,18 +10,34 @@
 	<h:body>
 		<h:outputText value="Hello World"></h:outputText>
 		<p:commandButton value="Neues Lebensmittel" type="button" onclick="PF('addFood').show();"></p:commandButton>
-			<h:form id="addForm">
-				<h:outputText value="Hersteller eingeben:"></h:outputText>
-				<p:inputText value="#{addFoodView.maker}"></p:inputText>
-				<p:commandButton value="Hinzufügen" actionListener="#{addFoodView.addFood}"></p:commandButton>
-			</h:form>
 		<p:dataTable var="food" value="#{inventoryView.foods}">
+			<p:column headerText="ID">
+				<h:outputText value="#{food.id}"></h:outputText>
+			</p:column>
+			<p:column headerText="Bezeichnung">
+				<h:outputText value="#{food.name}"></h:outputText>
+			</p:column>
 			<p:column headerText="Hersteller">
 				<h:outputText value="#{food.maker}"></h:outputText>
 			</p:column>
+			<p:column headerText="Ablaufdatum">
+				<h:outputText value="#{food.expiryDate}"></h:outputText>
+			</p:column>
 		</p:dataTable>
-		<p:dialog header="Eigenschaften Lebensmittel" widgetVar="addFood" modal="true" height="80">
-			
+		<p:dialog header="Eigenschaften Lebensmittel" widgetVar="addFood" modal="true" height="180">
+			<h:form id="addForm">
+				<h:outputText value="Bezeichnung:"></h:outputText>
+				<p:inputText value="#{addFoodView.name}"></p:inputText>
+					<br></br>
+				<h:outputText value="Hersteller:"></h:outputText>
+				<p:inputText value="#{addFoodView.maker}"></p:inputText>
+					<br></br>
+				<h:outputText value="Ablaufdatum:"></h:outputText>
+				<p:inputText value="#{addFoodView.expiryDate}"></p:inputText>
+					<br></br>
+					<br></br>
+				<p:commandButton value="Hinzufügen" actionListener="#{addFoodView.addFood}"></p:commandButton>
+			</h:form>
 		</p:dialog>
 	</h:body>
 </html>

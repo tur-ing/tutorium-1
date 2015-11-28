@@ -14,8 +14,8 @@ public class Food {
 	private String name;
 	private int expiryDate;
 
-	public Food(String maker) {
-		this.maker = maker;
+	public Food() {
+		
 	}
 	
 	public String getMaker() {

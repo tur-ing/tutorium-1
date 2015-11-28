@@ -13,15 +13,27 @@ import model.Food;
 public class AddFoodView implements Serializable {
 
 	private static final long serialVersionUID = -5614496873552383467L;
+	String name;
 	String maker;
+	int expiryDate;
 	
 	@ManagedProperty("#{foodService}")
 	FoodService foodService;
 	
 	public void addFood() {
-		Food food = new Food(maker);
-		System.out.println(food.getMaker());
+		Food food = new Food();
+		food.setName(name);
+		food.setMaker(maker);
+		food.setExpiryDate(expiryDate);
 		foodService.addFood(food);
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getMaker() {
@@ -30,6 +42,14 @@ public class AddFoodView implements Serializable {
 	
 	public void setMaker(String maker) {
 		this.maker = maker;
+	}
+
+	public int getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(int expiryDate) {
+		this.expiryDate = expiryDate;
 	}
 
 	public FoodService getFoodService() {
